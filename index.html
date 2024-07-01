@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+
+<head>
+
+    <title>Mobiles Store</title>
+
+    <link rel="icon" type="image/x-icon" href="imgs/436444227_454228660485618_5831143024037117044_n.jpg">
+
+
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+
+</head>
+
+
+
+<body>
+
+    <div class="d-flex flex-column justify-content-center align-items-center gap-3 mt-4">
+        <div class="image  text-center">
+            <img src="imgs/436444227_454228660485618_5831143024037117044_n.jpg" class="w-75" alt="">
+        </div>
+        <h1>Mobiles Store</h1>
+    </div>
+
+
+
+    <div class="my-5 py-3 mx-auto w-50">
+       
+        <div class="inputs">
+            <div class="form-floating mb-4 w-100">
+                <input oninput="validate(this)" type="text" class="form-control" id="phoneName" placeholder="Phone">
+                <div class="alert alert-danger d-none p-2 my-2">Phone Name Must be at least 5 charcters</div>
+                <label for="phoneName">Phone</label>
+
+            </div>
+
+            <div class="form-floating mb-4 w-100 ">
+                <input oninput="validate(this)" list="demo" type="text" class="form-control" id="company"
+                    placeholder="Company">
+                <div class="alert alert-danger d-none p-2 my-2">Wrong Company Name</div>
+                <label for="company">Company</label>
+
+                <datalist id="demo">
+                    <option value="Samsung"></option>
+                    <option value="Iphone"></option>
+                    <option value="Xiaomi"></option>
+                    <option value="Redmi"></option>
+                    <option value="Oppo"></option>
+                    <option value="Huawei"></option>
+                    <option value="Redmi"></option>
+                    <option value="Other"></option>
+
+
+
+                </datalist>
+
+            </div>
+
+            <div class="form-floating mb-4 w-100">
+                <input oninput="validate(this)" type="text" class="form-control" id="screen" placeholder="Screen">
+                <div class="alert alert-danger d-none p-2 my-2">First character must be cap & at least 2 char</div>
+                <label for="screen">Screen</label>
+
+            </div>
+
+            <div class="form-floating mb-4 w-100">
+                <input oninput="validate(this)" type="number" class="form-control" id="box" placeholder="Box">
+                <div class="alert alert-danger d-none p-2 my-2">Price must be between 1 - 9999</div>
+
+                <label for="box">Box</label>
+
+            </div>
+
+            <div class="form-floating mb-4 w-100">
+                <textarea class="form-control" placeholder="Description" id="productDescription"></textarea>
+                <label for="productDescription">Description</label>
+            </div>
+            <button id="addBtn" onclick="addProduct()" class="btn text-white btn-info">Add</button>
+            <button id="updateBtn" onclick="updateProduct()" class="btn text-white d-none btn-warning">Update</button>
+        </div>
+
+
+
+        <div class="form-floating mb-4 w-100 mt-4">
+            <input oninput="search()" type="text" class="form-control" id="searchInput" placeholder="Search...">
+            <label for="searchInput">Search</label>
+        </div>
+
+    </div>
+
+    <div class="container my-5 ">
+        <div class="row" id="myRow">
+
+        </div>
+    </div>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/index.js"></script>
+
+
+</body>
+
+</html>

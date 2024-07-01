@@ -1,0 +1,32 @@
+body {
+
+    background-image: url(../imgs/androidphones-2048px-0803.jpg);
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+input,
+textarea {
+
+    background-color: rgba(0, 0, 0, 0.255) !important;
+    color: white !important;
+}
+
+h1 {
+    background: #24B6D6;
+    background: linear-gradient(to right, #24B6D6 0%, #9DD051 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 700;
+    font-size: 70px;
+}
+
+.item{
+
+    color: white;
+    background-color: rgba(0, 0, 0, 0.505);
+padding: 16px;
+border-radius: 30px;
+}
+
