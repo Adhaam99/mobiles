@@ -1,7 +1,5 @@
 
 
-
-
 var phoneNameInput = document.getElementById("phoneName");
 var boxInput = document.getElementById("box");
 var companyInput = document.getElementById("company");
@@ -11,12 +9,12 @@ var myRow = document.getElementById("myRow");
 var searchInput = document.getElementById("searchInput");
 var addBtn = document.getElementById("addBtn");
 var updateBtn = document.getElementById("updateBtn");
-var inputs=document.querySelector(".inputs")
+var inputs = document.querySelector(".inputs")
 var myIndex;
 
-searchInput.addEventListener("click",function(){
+searchInput.addEventListener("click", function () {
 
-inputs.classList.add("d-none")
+    inputs.classList.add("d-none")
 })
 
 var productList;
@@ -43,6 +41,12 @@ function addProduct() {
         }
 
         productList.push(product);
+
+        swal({
+            text:"Item added successfully",
+            icon: "success",
+            timer:2000
+        });
 
         display(productList)
 
@@ -89,11 +93,34 @@ function display(arr) {
 
 function deleteProduct(deletedindex) {
 
-    productList.splice(deletedindex, 1)
+    swal({
+        title: "Are you sure?",
+        text: "Once deleted, you will not be able to recover this imaginary file!",
+        icon: "warning",
+        buttons: true,
+        dangerMode: true,
+    })
+        .then((willDelete) => {
+            if (willDelete) {
+                productList.splice(deletedindex, 1)
 
-    display(productList);
+                display(productList);
 
-    localStorage.setItem("products", JSON.stringify(productList))
+                localStorage.setItem("products", JSON.stringify(productList))
+                swal("Poof! Your imaginary file has been deleted!", {
+                    icon: "success",
+                    timer:2000
+                });
+            } else {
+                swal("Your imaginary file is safe!",{
+                    timer:2000
+
+                });
+            }
+        });
+
+
+
 
 }
 
@@ -140,7 +167,7 @@ function validate(element) {
     var regex = {
         phoneName: /^[a-zA-z1-9\s]{5,}$/,
         screen: /^[a-zA-z1-9\s]{3,}$/,
-        box: /^[1-9][0-9]{1,5}$/,
+        box: /^[0-9]{1,5}$/,
         company: /(Samsung|Iphone|Xiaomi|Redmi|Oppo|Huawei|Redmi|Other)/i,
     }
 
@@ -167,6 +194,9 @@ function setDataToInputs(index) {
     companyInput.value = productList[index].company;
     productDescriptionInput.value = productList[index].description;
 
+    inputs.classList.remove('d-none')
+
+
     phoneNameInput.classList.add("is-valid")
     boxInput.classList.add("is-valid")
     companyInput.classList.add("is-valid")
@@ -179,6 +209,8 @@ function setDataToInputs(index) {
 }
 
 function updateProduct() {
+
+
 
     if (phoneNameInput.classList.contains("is-valid")
         && boxInput.classList.contains("is-valid")
@@ -194,6 +226,7 @@ function updateProduct() {
 
         addBtn.classList.remove('d-none')
         updateBtn.classList.add('d-none')
+        display(productList)
 
         clearinput()
     }

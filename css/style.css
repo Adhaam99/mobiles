@@ -3,6 +3,7 @@ body {
     background-image: url(../imgs/androidphones-2048px-0803.jpg);
     background-position: center;
     background-size: cover;
+    background-repeat: repeat;
     background-attachment: fixed;
 }
 
