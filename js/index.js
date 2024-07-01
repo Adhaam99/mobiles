@@ -63,6 +63,8 @@ function clearinput() {
     phoneNameInput.value = null;
     companyInput.value = null;
     productDescriptionInput.value = null;
+    boxInput.value=null;
+    screenInput.value=null;
 
 }
 
