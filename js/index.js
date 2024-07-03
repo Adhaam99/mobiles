@@ -167,8 +167,8 @@ function search() {
 
 function validate(element) {
     var regex = {
-        phoneName: /^[a-zA-z1-9\s]{5,}$/,
-        screen: /^[a-zA-z1-9\s]{3,}$/,
+        phoneName: /^[a-zA-z0-9\s]{5,}$/,
+        screen: /^[a-zA-z0-9\s]{3,}$/,
         box: /^[0-9]{1,5}$/,
         company: /(Samsung|Iphone|Xiaomi|Redmi|Oppo|Huawei|Redmi|Other)/i,
     }
