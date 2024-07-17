@@ -141,7 +141,7 @@ function search() {
                     <h5>Phone: ${productList[i].phone.toLowerCase().replaceAll(word.toLowerCase(), `<span class="bg-info rounded-1 shadow">${word.toLowerCase()}</span>`)}</h5>
                     <p>Company: ${productList[i].company}</p>
                     <h5>Screen: <span class=" bg-danger px-2 py-1 rounded-2">${productList[i].screen}</span></h6>
-                    <p>box: ${productList[i].box}</p>                   
+                    <h6>box: <span class=" bg-danger px-2 py-1 rounded-2">${productList[i].box}</span> </h6>                   
                     <p>Description: ${productList[i].description}</p>
                            <div class="buttons d-flex gap-2 flex-nowrap">
                     <button onclick="deleteProduct(${i})" class="btn btn-outline-danger btn-sm w-50 my-1">Delete</button> 
